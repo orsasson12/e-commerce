@@ -1,27 +1,31 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 interface uiSliceState {
-    appbarIsVisible:Boolean,
-    cartModalIsVisible:Boolean
+  appbarIsVisible: Boolean;
+  cartModalIsVisible: Boolean;
+  sortIsVisible: Boolean;
 }
-const initialState:uiSliceState = {
-    appbarIsVisible:false,
-    cartModalIsVisible:false
-}
+const initialState: uiSliceState = {
+  appbarIsVisible: false,
+  cartModalIsVisible: false,
+  sortIsVisible: false,
+};
 const uiSlice = createSlice({
-    name:'ui',
-   initialState,
-   reducers:{
-        toggleAppbar(state){
-            state.appbarIsVisible = !state.appbarIsVisible
-        },
-        toggleCart(state){
-            state.cartModalIsVisible = !state.cartModalIsVisible
-        }
-   }
-})
+  name: "ui",
+  initialState,
+  reducers: {
+    toggleAppbar(state) {
+      state.appbarIsVisible = !state.appbarIsVisible;
+    },
+    toggleCart(state) {
+      state.cartModalIsVisible = !state.cartModalIsVisible;
+    },
+    toggleSort(state) {
+      state.sortIsVisible = !state.sortIsVisible;
+    },
+  },
+});
 
+export const uiActions = uiSlice.actions;
 
-export const uiActions = uiSlice.actions
-
-export default uiSlice
+export default uiSlice;
