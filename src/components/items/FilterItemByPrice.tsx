@@ -1,6 +1,5 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Select, MenuItem, FormControl, InputLabel, Box, Button } from "@mui/material";
+import {  MenuItem, Box, Button } from "@mui/material";
 import { productActions } from "../../store/productsReducer";
 import SortIcon from '@mui/icons-material/Sort';
 import { uiActions } from "../../store/uiReducer";

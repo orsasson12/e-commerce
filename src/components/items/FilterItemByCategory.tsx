@@ -23,7 +23,7 @@ const FilterItemByCategory = () => {
                 setSlidsPerView(1);
             }
             else if (window.innerWidth <= 768) {
-                setSlidsPerView(2)
+                setSlidsPerView(2) 
             } else {
                 setSlidsPerView(3)
             }
@@ -65,23 +65,7 @@ const FilterItemByCategory = () => {
             <SwiperSlide>
                 <Button variant='contained' onClick={() => handleCategory('phone')} startIcon={<PhoneIphoneTwoToneIcon />}>Phone's</Button>
             </SwiperSlide>
-
-
         </Swiper >
-        // <FormControl fullWidth>
-        //     <InputLabel id="demo-simple-select-label">Category</InputLabel>
-
-        //     <Select
-        //         labelId="demo-simple-select-label"
-        //         id="demo-simple-select"
-        //         label="Category"
-        //     >
-        //         <MenuItem value={'All'} onClick={() => handleCategory('all')}>All</MenuItem>
-        //         <MenuItem value={'phone'} onClick={() => handleCategory('phone')}>Phone's</MenuItem>
-        //         <MenuItem value={'garden'} onClick={() => handleCategory('garden')}>Garden</MenuItem>
-        //         <MenuItem value={'Electricity'} onClick={() => handleCategory('electricity')}>Electricity</MenuItem>
-        //     </Select>
-        // </FormControl>
     )
 }
 
