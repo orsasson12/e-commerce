@@ -4,14 +4,11 @@ import { DUMMY_DATA_ITEMS } from "../DUMMY_DATA";
 interface productSliceState {
   products: Item[];
   sortedProducts: Item[];
-
 }
-
 
 const initialState: productSliceState = {
   products: DUMMY_DATA_ITEMS,
-  sortedProducts: []
-
+  sortedProducts: [],
 };
 
 const productSlice = createSlice({
@@ -34,10 +31,12 @@ const productSlice = createSlice({
       action: PayloadAction<"low" | "high" | "normal">
     ) => {
       const sortMethod = action.payload;
+      const newArray = [...state.sortedProducts];
+      
       if (sortMethod === "normal") {
         state.sortedProducts = state.products;
       } else {
-        state.sortedProducts = state.products.sort((a, b) => {
+        state.sortedProducts = newArray.sort((a, b) => {
           return sortMethod === "low" ? a.price - b.price : b.price - a.price;
         });
       }
@@ -45,7 +44,5 @@ const productSlice = createSlice({
   },
 });
 
-
 export const productActions = productSlice.actions;
 export default productSlice;
-

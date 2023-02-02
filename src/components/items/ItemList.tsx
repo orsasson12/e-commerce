@@ -32,7 +32,7 @@ const ItemList = ({ title, price, image, quantity, description, id, totalPrice }
         }))
     }
     return (
-        <Grid item xs={12} sm={6} md={4} gap={5} sx={sortIsVisible && { ":first-child": { marginTop: { xs: '6rem', sm: '0' } } }} >
+        <Grid item xs={12} sm={6} md={4} gap={5} sx={sortIsVisible && { ":first-of-type": { marginTop: { xs: '6rem', sm: '0' } } }} >
 
             <Card sx={CardStyles}>
                 <CardMedia

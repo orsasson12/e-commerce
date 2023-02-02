@@ -14,20 +14,26 @@ import PhoneIphoneTwoToneIcon from '@mui/icons-material/PhoneIphoneTwoTone';
 import ShopIcon from '@mui/icons-material/Shop';
 const FilterItemByCategory = () => {
     const [slidesPerView, setSlidsPerView] = useState(3);
-    const changeView = () => {
-        if (window.innerWidth < 768) {
-            setSlidsPerView(2);
-        }
-        if (window.innerWidth < 650) {
-            setSlidsPerView(1)
-        }
-    };
+
     useEffect(() => {
+        const changeView = () => {
+            console.log(window.innerWidth, slidesPerView);
+
+            if (window.innerWidth <= 650) {
+                setSlidsPerView(1);
+            }
+            else if (window.innerWidth <= 768) {
+                setSlidsPerView(2)
+            } else {
+                setSlidsPerView(3)
+            }
+        };
         window.addEventListener("resize", changeView);
+        changeView()
         return () => {
             window.removeEventListener('resize', changeView)
         }
-    }, []);
+    }, [slidesPerView]);
 
     const dispatch = useDispatch()
     const handleCategory = (value: string) => {
