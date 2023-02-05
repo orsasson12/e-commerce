@@ -1,6 +1,5 @@
 import React from 'react'
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { uiActions } from '../../store/uiReducer'

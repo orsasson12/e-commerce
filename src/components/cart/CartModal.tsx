@@ -2,24 +2,23 @@ import React from 'react'
 import { Modal, Box, Typography, List, Button } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 import { uiActions } from '../../store/uiReducer'
-import CartModalItem from './CartModalItem'
+import CartModalItem from './cartModal/CartModalItem'
 import { cartActions } from '../../store/cartReducer'
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
+import { cartItemType } from '../../store/cartReducer'
 // styles 
 import { listStyle, BoxStyleModal, BoxModalTitleStyle, ModalStyle, TotalPriceStyle } from './CartStyles'
 const CartModal = () => {
     const open = useSelector((state: any) => state.ui.cartModalIsVisible)
-    const cartItems = useSelector((state: any) => state.cart.items)
+    const cartItems = useSelector((state: cartItemType) => state.cart.items)
     const dispatch = useDispatch()
     const handleToggle = () => {
         dispatch(uiActions.toggleCart())
     }
-
     let totalShopPrice = cartItems.reduce(
-        (accumulator: any, currentValue: any) => accumulator + currentValue.totalPrice,
+        (accumulator, currentValue) => accumulator + currentValue.totalPrice,
         0
     );
-
     const handleClearShop = () => {
         dispatch(cartActions.clearStore())
     }
@@ -35,9 +34,7 @@ const CartModal = () => {
                                 return (
                                     <CartModalItem cartItem={cartItem} key={cartItem.id} />
                                 )
-
                             })
-
                         }
                     </Box>
                 </List>

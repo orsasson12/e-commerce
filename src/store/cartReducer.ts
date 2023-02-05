@@ -11,6 +11,9 @@ export interface Item {
   category: string;
 }
 
+export interface cartItemType {
+  cart: cartSliceState;
+}
 export interface cartSliceState {
   items: Item[];
   totalQuantity: number;

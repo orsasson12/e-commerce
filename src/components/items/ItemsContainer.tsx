@@ -1,10 +1,11 @@
 import React from 'react'
 import { Box, Grid } from '@mui/material'
 import { useSelector } from 'react-redux'
-import ItemList from './ItemList'
-import FilterItemByCategory from './FilterItemByCategory'
+import ItemList from './ItemList/ItemList'
+import FilterItemByCategory from './FIlterItemsByCategory/FilterItemByCategory'
 import FilterItemByPrice from './FilterItemByPrice'
 import { GridStyles } from './ItemsStyles'
+import { Item } from '../../store/cartReducer'
 const ItemsContainer = () => {
   const products = useSelector((state: any) => state.product.products)
   const sortedProducts = useSelector((state: any) => state.product.sortedProducts)
@@ -21,18 +22,10 @@ const ItemsContainer = () => {
         {
           products && (
             (sortedProducts.length === 0 ? products : sortedProducts).map(
-              (item: { quantity: number; title: string; price: number; image: string; description: string; id: string; totalPrice: number; category: string }) => {
+              (item: Item) => {
                 return (
                   <ItemList
-                    quantity={item.quantity}
-                    title={item.title}
-                    price={item.price}
-                    image={item.image}
-                    description={item.description}
-                    key={item.id}
-                    id={item.id}
-                    totalPrice={item.totalPrice}
-                    category={item.category}
+                    item={item}
                   />
                 );
               }
