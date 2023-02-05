@@ -1,9 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Item } from "./cartReducer";
 import { DUMMY_DATA_ITEMS } from "../DUMMY_DATA";
-interface productSliceState {
+export interface productSliceState {
   products: Item[];
   sortedProducts: Item[];
+}
+
+export interface productType {
+  product: productSliceState;
 }
 
 const initialState: productSliceState = {
@@ -32,7 +36,7 @@ const productSlice = createSlice({
     ) => {
       const sortMethod = action.payload;
       const newArray = [...state.sortedProducts];
-      
+
       if (sortMethod === "normal") {
         state.sortedProducts = state.products;
       } else {

@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import {  MenuItem, Box, Button } from "@mui/material";
+import { MenuItem, Box, Button } from "@mui/material";
 import { productActions } from "../../store/productsReducer";
 import SortIcon from '@mui/icons-material/Sort';
 import { uiActions } from "../../store/uiReducer";
 import { filterByItemBoxStyles, menuItemStyle } from "./ItemsStyles";
+import { uiSliceState } from '../../store/uiReducer'
+
 const FilterItemByPrice = () => {
   const dispatch = useDispatch();
-  const visible = useSelector((state: any) => state.ui.sortIsVisible)
+  const visible = useSelector((state: uiSliceState) => state.ui.sortIsVisible)
   const handleShowSort = () => {
     dispatch(uiActions.toggleSort())
   }
@@ -15,7 +17,7 @@ const FilterItemByPrice = () => {
   };
   return (
     <Box sx={filterByItemBoxStyles}>
-      <Button  startIcon={<SortIcon />} variant='contained' id='demo-simple-select-label' onClick={handleShowSort}>Sort by</Button>
+      <Button startIcon={<SortIcon />} variant='contained' id='demo-simple-select-label' onClick={handleShowSort}>Sort by</Button>
       {
         visible && (
           <>

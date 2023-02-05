@@ -1,4 +1,3 @@
-import React from 'react'
 import SwiperContainer from './SwiperContainer';
 import useSlidesHook from '../../../hooks/useSlides';
 const FilterItemByCategory = () => {

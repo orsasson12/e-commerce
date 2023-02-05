@@ -6,9 +6,10 @@ import FilterItemByCategory from './FIlterItemsByCategory/FilterItemByCategory'
 import FilterItemByPrice from './FilterItemByPrice'
 import { GridStyles } from './ItemsStyles'
 import { Item } from '../../store/cartReducer'
+import { productType } from '../../store/productsReducer'
 const ItemsContainer = () => {
-  const products = useSelector((state: any) => state.product.products)
-  const sortedProducts = useSelector((state: any) => state.product.sortedProducts)
+  const products = useSelector((state: productType) => state.product.products)
+  const sortedProducts = useSelector((state: productType) => state.product.sortedProducts)
 
 
 

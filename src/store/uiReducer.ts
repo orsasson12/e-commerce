@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface uiSliceState {
+export interface uiSliceState {
+  [x: string]: any;
   appbarIsVisible: Boolean;
   cartModalIsVisible: Boolean;
   sortIsVisible: Boolean;
 }
+
 const initialState: uiSliceState = {
   appbarIsVisible: false,
   cartModalIsVisible: false,

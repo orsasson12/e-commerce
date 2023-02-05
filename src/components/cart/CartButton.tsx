@@ -4,9 +4,10 @@ import { Badge } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { uiActions } from '../../store/uiReducer'
 import { CartIconStyle } from './CartStyles'
+import { cartItemType } from '../../store/cartReducer'
 function CartButton() {
     const dispatch = useDispatch()
-    const cartQuantity = useSelector((state: any) => state.cart.totalQuantity)
+    const cartQuantity = useSelector((state: cartItemType) => state.cart.totalQuantity)
 
     const handleToggle = () => {
         dispatch(uiActions.toggleCart())
