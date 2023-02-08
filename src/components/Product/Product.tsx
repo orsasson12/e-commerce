@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux'
 import ProductCategoryArray from './ProductCategoryArray'
 import { cartActions } from '../../store/cartReducer'
 import ProductContent from './ProductContent'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 type PropType = {
   product: Item
   categoryProductsArray: Item[]
@@ -26,12 +28,14 @@ const Product: FC<PropType> = ({ product, categoryProductsArray }) => {
   };
 
   const addProductToCart = () => {
+    toast.success(`Item Added to You're Cart 🛒`)
     dispatch(cartActions.addItemToCart(product))
   }
 
   return (
     <>
       <Box sx={containerStyle}>
+        <ToastContainer />
         <ProductCategoryArray changeProduct={changeProduct} categoryProductsArray={categoryProductsArray} />
         <Box sx={productContainerStyle}>
           <ProductContent product={product} addProductToCart={addProductToCart} />

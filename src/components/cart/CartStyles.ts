@@ -69,5 +69,3 @@ export const CartIconStyle = {
     transition: "all 0.6s",
   },
 };
-
-export {};

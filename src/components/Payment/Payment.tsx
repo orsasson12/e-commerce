@@ -16,8 +16,8 @@ const Payment: FC<PropsType> = ({ paymentItemsData }) => {
       <Typography variant='h5'>Order Summary</Typography>
       <Typography component='span'>Items Price : {totalShopPrice}$ </Typography>
       <Typography component='span'>Shipping Price : 0$</Typography>
-      <Typography variant="h3">Order Total : {totalShopPrice}</Typography>
-      <Button variant="contained">Give Me Your'e Money</Button>
+      <Typography variant="h3">Order Total : {totalShopPrice}$</Typography>
+      <Button variant="contained" sx={{margin:'1rem'}}>Give Me Your'e Money</Button>
       <Typography component='p'>Millions of companies of all sizes—from startups to Fortune 500s—use Stripe’s software and APIs to accept payments, send payouts, and manage their businesses online. </Typography>
     </Box>
   )

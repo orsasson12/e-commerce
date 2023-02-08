@@ -19,7 +19,7 @@ const ProductContent: FC<PropsType> = ({ product, addProductToCart }) => {
                             image={product.image}
                             alt={product.title}
                         />
-                        <CardContent>
+                        <CardContent >
                             <Typography gutterBottom variant="h5" component="div">
                                 {product.category}
                             </Typography>

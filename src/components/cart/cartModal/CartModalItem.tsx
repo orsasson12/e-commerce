@@ -24,7 +24,7 @@ const CartModalItem: FC<Props> = ({ cartItem }) => {
                 <CartModalItemContent addItemHandler={addItemHandler} cartItem={cartItem} removeItemHandler={removeItemHandler} />
                 <CardMedia
                     component="img"
-                    sx={{ width: '30%' }}
+                    sx={{ width: { xs: '250px', md: '30%' } }}
                     image={cartItem.image}
                     alt="Live from space album cover"
                 />

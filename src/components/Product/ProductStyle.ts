@@ -59,6 +59,7 @@ export const productPriceStyle = {
   width: { xs: "100%", md: "500px" },
   maxWidth:{xs:'500px', md:'none'},
   alignItems: "center",
+  marginTop:'1rem'
 };
 
 export const productsStyle = {

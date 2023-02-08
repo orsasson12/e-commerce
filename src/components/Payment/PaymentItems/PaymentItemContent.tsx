@@ -16,7 +16,7 @@ const PaymentItemContent: FC<PropsType> = ({ item }) => {
                     title={item.title}
                 >
                 </CardMedia>
-                <CardContent>
+                <CardContent sx={{display:{xs:'flex',lg:'block'}, flexDirection:'column'}}>
                     <span style={CardContentSpanStyle}>{item.title}</span>
                     <span style={CardContentSpanStyle}><strong>{item.category}</strong></span>
                     <span style={CardContentSpanStyle}>{item.price} X {item.quantity} = {item.totalPrice}$</span>

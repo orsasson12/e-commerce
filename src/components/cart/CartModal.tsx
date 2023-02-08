@@ -26,7 +26,7 @@ const CartModal = () => {
     }
     return (
         <Modal open={open} onClose={handleToggle} sx={ModalStyle}>
-            <Box width={'50%'} margin='0 auto'>
+            <Box width={{xs:'90%',sm:'50%'}} margin='0 auto'>
                 {cartItems.length <= 0 && <Typography sx={BoxModalTitleStyle} variant='h1'>No Items In Your'e Cart</Typography>}
                 <List sx={listStyle}>
                     {cartItems.length > 0 && <Button variant='contained' sx={{ backgroundColor: '#48abe5f7' }} endIcon={<CleaningServicesIcon />} onClick={handleClearShop} >Clean the Shop</Button>}
