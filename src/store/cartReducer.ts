@@ -15,6 +15,7 @@ export interface cartItemType {
   cart: cartSliceState;
 }
 export interface cartSliceState {
+  [x: string]: any;
   items: Item[];
   totalQuantity: number;
 }

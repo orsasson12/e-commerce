@@ -1,9 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Item } from "./cartReducer";
+
 import { DUMMY_DATA_ITEMS } from "../DUMMY_DATA";
 export interface productSliceState {
   products: Item[];
   sortedProducts: Item[];
+  product: Item;
+  categoryProducts: Item[];
 }
 
 export interface productType {
@@ -13,6 +16,17 @@ export interface productType {
 const initialState: productSliceState = {
   products: DUMMY_DATA_ITEMS,
   sortedProducts: [],
+  product: {
+    id: "",
+    category: "",
+    title: "",
+    description: "",
+    image: "",
+    price: 0,
+    quantity: 0,
+    totalPrice: 0,
+  },
+  categoryProducts: [],
 };
 
 const productSlice = createSlice({
@@ -44,6 +58,17 @@ const productSlice = createSlice({
           return sortMethod === "low" ? a.price - b.price : b.price - a.price;
         });
       }
+    },
+    fetchProduct: (state, action: PayloadAction<string>) => {
+      const product = state.products.find((item) => item.id === action.payload);
+
+      if (product) {
+        state.categoryProducts = state.products.filter(
+          (item) => item.category === product.category
+        );
+        state.product = { ...product };
+      }
+  
     },
   },
 });

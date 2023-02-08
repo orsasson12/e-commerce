@@ -26,6 +26,7 @@ const ItemsContainer = () => {
               (item: Item) => {
                 return (
                   <ItemList
+                    key={item.id}
                     item={item}
                   />
                 );

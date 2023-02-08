@@ -1,8 +1,11 @@
 import React, { FC } from 'react'
 import { Item } from '../../../store/cartReducer'
-import { Card, CardMedia, CardContent, Typography, CardActions, styled, Button } from '@mui/material'
-import { CardStyles, CardMediaStyles } from '../ItemsStyles'
+import { Card, CardMedia, CardContent, Typography, styled, Button } from '@mui/material'
+import { CardStyles, CardMediaStyles, categoryStyle } from '../ItemsStyles'
 import { lightBlue } from "@mui/material/colors";
+import { useNavigate } from 'react-router-dom';
+import { productActions } from '../../../store/productsReducer'
+import { useDispatch } from 'react-redux'
 type Props = {
     item: Item
     addItemHandler: (item: Item) => void
@@ -20,26 +23,52 @@ export const StyledButton = styled(Button)(({ theme }) => ({
 }
 ));
 const ItemListContent: FC<Props> = ({ item, addItemHandler }) => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const go = (id: string) => {
+        dispatch(productActions.fetchProduct(id))
+        navigate(`/product/${id}`)
+    }
     return (
-        <Card sx={CardStyles}>
-            <CardMedia
-                sx={CardMediaStyles}
-                image={item.image}
-                title="green iguana"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {item.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {item.description}
-                </Typography>
-                <Typography>Cost: ${item.price.toFixed(2)}</Typography>
-            </CardContent>
-            <CardActions style={{ justifyContent: 'center' }}>
-                <StyledButton variant='contained' onClick={() => addItemHandler(item)}>ADD TO CART</StyledButton>
-            </CardActions>
-        </Card>
+
+        <>
+            <Button variant='outlined' sx={categoryStyle}>{item.category}</Button>
+            <Card sx={CardStyles} onClick={() => go(item.id)}>
+                <CardMedia
+                    sx={CardMediaStyles}
+                    image={item.image}
+                    title={item.title}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {item.title}
+                    </Typography>
+                    <Typography variant='h6'><strong>${item.price.toFixed(2)}</strong></Typography>
+                </CardContent>
+                {/* <CardActions style={{ justifyContent: 'center' }}>
+               <StyledButton variant='contained' onClick={() => addItemHandler(item)}>ADD TO CART</StyledButton>
+            </CardActions> */}
+            </Card>
+        </>
+        // <Card sx={CardStyles}>
+        //     <CardMedia
+        //         sx={CardMediaStyles}
+        //         image={item.image}
+        //         title={item.title}
+        //     />
+        //     <CardContent>
+        //         <Typography gutterBottom variant="h5" component="div">
+        //             {item.title}
+        //         </Typography>
+        //         <Typography variant="body2" color="text.secondary">
+        //             {item.description}
+        //         </Typography>
+        //         <Typography>Cost: ${item.price.toFixed(2)}</Typography>
+        //     </CardContent>
+        //     <CardActions style={{ justifyContent: 'center' }}>
+        //         <StyledButton variant='contained' onClick={() => addItemHandler(item)}>ADD TO CART</StyledButton>
+        //     </CardActions>
+        // </Card>
     )
 }
 

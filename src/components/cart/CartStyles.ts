@@ -40,13 +40,12 @@ export const ModalStyle = {
 };
 
 export const TotalPriceStyle = {
-  width: { sx: "100%", md: "600px", lg: "100%" },
+  width: { sx: "100%", lg: "100%" },
   textAlign: "center",
-  backgroundColor: "#d3d3d3",
   borderRadius: "20px",
   fontSize: "1.3rem",
   fontWeight: "bold",
-  color: "#1e1d1d90",
+  color: "#111000",
 };
 ///
 export const PriceBoxStyles = {

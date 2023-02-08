@@ -9,6 +9,7 @@ import { cartItemType } from '../../store/cartReducer'
 import { uiSliceState } from '../../store/uiReducer'
 // styles 
 import { listStyle, BoxStyleModal, BoxModalTitleStyle, ModalStyle, TotalPriceStyle } from './CartStyles'
+import PaymentButton from './Payment/PaymentButton'
 const CartModal = () => {
     const open = useSelector((state: uiSliceState) => state.ui.cartModalIsVisible)
     const cartItems = useSelector((state: cartItemType) => state.cart.items)
@@ -40,8 +41,12 @@ const CartModal = () => {
                     </Box>
                 </List>
 
-                {cartItems.length > 0 && <Typography sx={TotalPriceStyle}>totalPrice: {totalShopPrice}$</Typography>}
+                {cartItems.length > 0 && <Typography sx={TotalPriceStyle}>Cart Total: <strong>{totalShopPrice}</strong>$</Typography> &&
+                    <PaymentButton />
+                }
+
             </Box>
+
         </Modal>
 
 

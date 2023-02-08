@@ -9,6 +9,12 @@ import fridge from "./assets/fridge-removebg-preview.png";
 import hairdrayer from "./assets/hairdrayer-removebg-preview.png";
 import laptop from "./assets/laptop-removebg-preview.png";
 import computer from "./assets/computer-removebg-preview.png";
+import camera from "./assets/camera.png";
+import camera2 from "./assets/camera2.png";
+import chair2 from "./assets/chair.png";
+import safsal from "./assets/safsal.png";
+import newPhone from "./assets/phone_hero-module_hero-image_de_DE_1440_2x.png";
+import tv from "./assets/tv.png";
 export const DUMMY_DATA_ITEMS: Item[] = [
   {
     id: "1",
@@ -111,6 +117,71 @@ export const DUMMY_DATA_ITEMS: Item[] = [
       "Good computer coming with all of the thing that you need to play ",
     totalPrice: 0,
     image: computer,
+    category: "electricity",
+  },
+  {
+    id: "11",
+    title: "TV",
+    price: 350,
+    quantity: 1,
+    description: "Good TV coming with all of the thing that you need to play ",
+    totalPrice: 0,
+    image: tv,
+    category: "electricity",
+  },
+  {
+    id: "12",
+    title: "Swiming Pool",
+    price: 960,
+    quantity: 1,
+    description:
+      "Good pool coming with all of the thing that you need to play ",
+    totalPrice: 0,
+    image: chair2,
+    category: "garden",
+  },
+  {
+    id: "13",
+    title: "bench",
+    price: 100,
+    quantity: 1,
+    description:
+      "Good bench coming with all of the thing that you need to play ",
+    totalPrice: 0,
+    image: safsal,
+    category: "garden",
+  },
+  {
+    id: "14",
+    title: "newPhone",
+    price: 855,
+    quantity: 1,
+    description:
+      "Good newPhone coming with all of the thing that you need to play ",
+    totalPrice: 0,
+    image: newPhone,
+    category: "phone",
+  },
+  {
+    id: "15",
+    title: "camera2",
+    price: 155,
+    quantity: 1,
+    description:
+      "Good camera2 coming with all of the thing that you need to play ",
+    totalPrice: 0,
+    image: camera2,
+    category: "electricity",
+  },
+  {
+    id: "16",
+    title: "camera",
+    price: 190,
+    quantity: 1,
+    description:
+      "Good camera coming with all of the thing that you need to play ",
+    totalPrice: 0,
+    image: camera,
     category: "electricity",
   },
 ];
