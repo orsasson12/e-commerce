@@ -9,7 +9,6 @@ export const GridStyles = {
   justiftyContent: "space-around",
 };
 
-
 // item List Styles
 export const CardStyles = {
   width: { xs: "auto", md: "80%" },
@@ -17,13 +16,8 @@ export const CardStyles = {
   borderRadius: "20px",
   "&:hover": {
     cursor: "pointer",
-    position:'relative',
-    // transform: "scale(1.1,1.1)",
-    transform: "rotate(3deg)",
-    transition: "0.5s all",
-    transformOrigin: "left 2px",
-    top:'2rem',
-    
+    transition: "1s all",
+    filter: " drop-shadow(7px 9px 10px #c5c3c6)",
   },
 };
 
@@ -33,17 +27,18 @@ export const CardMediaStyles = {
   height: "250px",
   backgroundPosition: "center",
   backgroundSize: "contain",
-  "&:hover":{
-    transform: "perspective(23rem)"
-  }
+  "&:hover": {
+    transform: "scale(1.1,1.1)",
+    transition: "0.5s all",
+    filter: " drop-shadow(16px 16px 20px #c5c3c6)",
+  },
 };
-
 
 export const categoryStyle = {
   position: "relative",
-  top: "15%",
+  top: "5%",
   zIndex: "-1",
-  left: "10.4%",
+  left: "5%",
 };
 
 //filterByItemBoxStyles
@@ -61,4 +56,3 @@ export const menuItemStyle = {
   paddingLeft: "5px",
   marginLeft: "1rem",
 };
-
