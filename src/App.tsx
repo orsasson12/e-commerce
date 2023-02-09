@@ -5,6 +5,7 @@ import ItemPage from './Pages/ItemPage';
 import Appbar from './components/appbar/Appbar';
 import Cart from './components/cart/Cart';
 import PayementPage from './Pages/PayementPage';
+import Footer from './components/footer/Footer';
 function App() {
   return (
     <Box>
@@ -15,6 +16,7 @@ function App() {
         <Route path='/product/:id' element={<ItemPage />} />
         <Route path='/payment' element={<PayementPage />} />
       </Routes>
+      <Footer />
     </Box>
   );
 }

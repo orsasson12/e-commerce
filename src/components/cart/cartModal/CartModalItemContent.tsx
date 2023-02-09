@@ -25,9 +25,9 @@ const CartModalItemContent: FC<Props> = ({ cartItem, addItemHandler, removeItemH
                     <span>(${cartItem.price.toFixed(2)}/item)</span>
                 </Box >
                 <Box sx={BoxStyles}>
-                    <Button variant='contained' size='medium'><AddCircleOutlineIcon fontSize='medium' onClick={addItemHandler} /></Button>
+                    <Button variant='contained' size='medium' onClick={addItemHandler}><AddCircleOutlineIcon fontSize='medium'  /></Button>
                     <span>{cartItem.quantity}</span>
-                    <Button variant='contained' size="medium"><RemoveIcon fontSize='medium' onClick={removeItemHandler} /></Button>
+                    <Button variant='contained' size="medium" onClick={removeItemHandler}><RemoveIcon fontSize='medium'  /></Button>
                 </Box>
             </CardContent>
         </Box>
